@@ -9,7 +9,7 @@ import { Egreso } from './egreso.model';
 })
 export class EgresoComponent implements OnInit {
   egresos: Egreso[] = [];
-  @Input() presupuestoDisponible: number = 0;
+  @Input() ingresoTotal: number = 0;
 
   constructor(private egresoService: EgresoService) {}
 
@@ -22,6 +22,6 @@ export class EgresoComponent implements OnInit {
   }
 
   porcentajeEgreso(egreso: Egreso) {
-    return this.egresoService.porcentajeEgreso(this.presupuestoDisponible, egreso.valor);
+    return this.egresoService.porcentajeEgreso(this.ingresoTotal, egreso.valor);
   }
 }
