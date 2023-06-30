@@ -25,6 +25,9 @@ body {
 .red {
   color: #ff5049 !important;
 }
+.green {
+  color: #28b970 !important;
+}
 .redfocus:focus {
   border: 1px solid #ff5049 !important;
 }

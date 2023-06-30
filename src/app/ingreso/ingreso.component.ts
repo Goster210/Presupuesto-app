@@ -17,6 +17,5 @@ export class IngresoComponent implements OnInit {
 
   eliminarIngreso(ingreso:Ingreso) {
     this.ingresosService.eliminarIngreso(ingreso);
-    alert('Se elimino el Ingreso: '+ ingreso.titulo);
   }
 }

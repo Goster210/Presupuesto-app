@@ -26,11 +26,22 @@ export class FormularioComponent implements OnInit {
   }
 
   agregar() {
-    if (this.tipo === 'ingresoOperacion') {
-      this.ingresoServicio.agregarIngreso(new Ingreso(this.titulo, this.valor));
+    if (this.titulo !== '' && this.valor > 0) {
+      if (this.tipo === 'ingresoOperacion') {
+        this.ingresoServicio.agregarIngreso(
+          new Ingreso(this.titulo, this.valor)
+        );
+      }
+      if (this.tipo === 'egresoOperacion') {
+        this.egresoServicio.agregarEgreso(new Egreso(this.titulo, this.valor));
+      }
+      this.limpiarFormulario();
+    } else {
+      alert('Campos invalidos en el formulario');
     }
-    if (this.tipo === 'egresoOperacion') {
-      this.egresoServicio.agregarEgreso(new Egreso(this.titulo, this.valor));
-    }
+  }
+  limpiarFormulario(){
+    this.titulo = '';
+    this.valor = 0;
   }
 }
