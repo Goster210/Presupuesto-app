@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cabecera',
@@ -11,5 +11,8 @@ export class CabeceraComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  @Input() presupuestoDisponible:number = 0;
+  @Input() totalIngresos:number = 0;
+  @Input() totalEgresos:number = 0;
+  @Input() porcentajeEgresos:number = 0;
 }
